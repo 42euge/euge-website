@@ -43,16 +43,16 @@ export function Experience() {
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="flex items-center gap-3 mb-12">
-          <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500">
-            <FaBriefcase className="w-6 h-6" />
+          <div className="p-3 rounded-xl bg-white border-3 border-indigo-950 cartoon-btn">
+            <FaBriefcase className="w-6 h-6 text-violet-600" />
           </div>
-          <h2 className="text-3xl font-bold text-white">Experience</h2>
+          <h2 className="text-3xl font-black text-indigo-950">Experience</h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-neutral-800 -translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-indigo-950 -translate-x-1/2 rounded-full" />
 
           {experiences.map((exp, index) => (
             <div
@@ -62,26 +62,26 @@ export function Experience() {
               }`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-emerald-500 rounded-full -translate-x-1/2 border-4 border-background" />
+              <div className="absolute left-4 md:left-1/2 w-6 h-6 bg-violet-500 rounded-full -translate-x-1/2 border-4 border-indigo-950 z-10" />
 
               {/* Content */}
-              <div className="md:w-1/2 pl-8 md:pl-0 md:px-8">
-                <div className="p-6 rounded-2xl bg-card border border-card-border hover:border-emerald-500/50 transition-colors">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-emerald-500 font-medium">
+              <div className="md:w-1/2 pl-12 md:pl-0 md:px-8">
+                <div className="p-6 rounded-2xl cartoon-card">
+                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                    <span className="text-violet-600 font-bold">
                       {exp.company}
                     </span>
-                    <span className="text-sm text-neutral-500">{exp.period}</span>
+                    <span className="text-sm text-indigo-950/60 font-semibold">{exp.period}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className="text-xl font-bold text-indigo-950 mb-3">
                     {exp.role}
                   </h3>
-                  <p className="text-neutral-400 mb-4">{exp.description}</p>
+                  <p className="text-indigo-900/70 mb-4">{exp.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-sm bg-neutral-800 text-neutral-300 rounded-full"
+                        className="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full font-semibold border-2 border-violet-300"
                       >
                         {tech}
                       </span>

@@ -15,32 +15,32 @@ export default function BlogPage() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Blog</h1>
-          <p className="text-neutral-400 text-lg">
+          <h1 className="text-4xl font-black text-indigo-950 mb-4">Blog</h1>
+          <p className="text-indigo-900/70 text-lg font-semibold">
             Thoughts on software development, technology, and more.
           </p>
         </div>
 
         {/* Posts */}
         {posts.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-neutral-500 text-lg">No posts yet. Check back soon!</p>
+          <div className="text-center py-16 cartoon-card rounded-2xl">
+            <p className="text-indigo-900/70 text-lg font-semibold">No posts yet. Check back soon!</p>
           </div>
         ) : (
-          <div className="space-y-8">
+          <div className="space-y-6">
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="group p-6 rounded-2xl bg-card border border-card-border hover:border-emerald-500/50 transition-all duration-300"
+                className="group p-6 rounded-2xl cartoon-card hover:-translate-y-1 transition-transform duration-200"
               >
                 <Link href={`/blog/${post.slug}`}>
-                  <h2 className="text-2xl font-semibold text-white mb-3 group-hover:text-emerald-500 transition-colors">
+                  <h2 className="text-2xl font-bold text-indigo-950 mb-3 group-hover:text-violet-600 transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-neutral-400 mb-4 line-clamp-2">
+                  <p className="text-indigo-900/70 mb-4 line-clamp-2">
                     {post.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-indigo-950/60 font-semibold">
                     <span className="flex items-center gap-2">
                       <FaCalendar className="w-3 h-3" />
                       {new Date(post.date).toLocaleDateString("en-US", {

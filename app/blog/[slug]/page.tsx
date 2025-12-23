@@ -45,44 +45,47 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Back link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-neutral-400 hover:text-emerald-500 transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-indigo-950/70 hover:text-violet-600 transition-colors mb-8 font-semibold"
         >
           <FaArrowLeft className="w-3 h-3" />
           Back to blog
         </Link>
 
-        {/* Header */}
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {post.title}
-          </h1>
-          <div className="flex items-center gap-4 text-neutral-500">
-            <span className="flex items-center gap-2">
-              <FaCalendar className="w-4 h-4" />
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </div>
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-4">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-sm bg-emerald-500/10 text-emerald-500 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+        {/* Content card */}
+        <div className="cartoon-card rounded-2xl p-8 md:p-12">
+          {/* Header */}
+          <header className="mb-8 pb-8 border-b-2 border-indigo-950/10">
+            <h1 className="text-3xl md:text-4xl font-black text-indigo-950 mb-4">
+              {post.title}
+            </h1>
+            <div className="flex items-center gap-4 text-indigo-950/60 font-semibold">
+              <span className="flex items-center gap-2">
+                <FaCalendar className="w-4 h-4" />
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
             </div>
-          )}
-        </header>
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-4">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full font-semibold border-2 border-violet-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </header>
 
-        {/* Content */}
-        <div className="prose prose-invert prose-emerald max-w-none prose-headings:text-white prose-p:text-neutral-300 prose-a:text-emerald-500 prose-strong:text-white prose-code:text-emerald-400 prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800">
-          <MDXRemote source={post.content} />
+          {/* Content */}
+          <div className="prose prose-lg max-w-none prose-headings:text-indigo-950 prose-headings:font-bold prose-p:text-indigo-900/80 prose-a:text-violet-600 prose-strong:text-indigo-950 prose-code:text-violet-600 prose-code:bg-violet-50 prose-code:px-1 prose-code:rounded prose-pre:bg-indigo-950 prose-pre:text-white prose-li:text-indigo-900/80">
+            <MDXRemote source={post.content} />
+          </div>
         </div>
       </article>
     </div>
