@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #c4b5fd;
+  --foreground: #1e1b4b;
+  --purple-light: #e9d5ff;
+  --purple-mid: #a855f7;
+  --purple-dark: #7c3aed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ddd6fe;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Selection */
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cartoon button style */
+.cartoon-btn {
+  border: 3px solid #1e1b4b;
+  box-shadow: 4px 4px 0px #1e1b4b;
+  transition: all 0.15s ease;
+}
+
+.cartoon-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #1e1b4b;
+}
+
+.cartoon-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #1e1b4b;
+}
+
+/* Cartoon card style */
+.cartoon-card {
+  border: 3px solid #1e1b4b;
+  box-shadow: 6px 6px 0px #1e1b4b;
+  background: white;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Cloud animation */
+@keyframes drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.clouds {
+  animation: drift 60s linear infinite;
+}
