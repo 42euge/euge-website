@@ -12,28 +12,28 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Your Company",
-    role: "Software Development Engineer",
-    period: "2023 - Present",
+    company: "Blue Origin",
+    role: "Software Development Engineer III",
+    period: "Nov 2024 - Present",
     description:
-      "Building scalable web applications and services. Working with modern technologies to deliver high-quality software solutions.",
-    technologies: ["TypeScript", "React", "Node.js", "AWS"],
+      "Building internal platforms for anomaly detection and proactive issue identification. Developing systems software for ground station operations and mission-critical telemetry processing.",
+    technologies: ["C++", "Python", "ML/AI", "REST APIs"],
   },
   {
-    company: "Previous Company",
-    role: "Software Engineer",
-    period: "2021 - 2023",
+    company: "Amazon - Project Kuiper",
+    role: "Digital RF Systems Engineer",
+    period: "Apr 2020 - Jul 2024",
     description:
-      "Developed and maintained full-stack applications. Collaborated with cross-functional teams to ship new features.",
-    technologies: ["JavaScript", "Python", "PostgreSQL", "Docker"],
+      "Designed APIs and infrastructure for hardware control and validation. Built scalable cloud infrastructure for simulations and Hardware-in-the-Loop CI/CD pipelines.",
+    technologies: ["Python", "C++", "AWS", "MATLAB", "CI/CD"],
   },
   {
-    company: "First Company",
-    role: "Junior Developer",
-    period: "2020 - 2021",
+    company: "Quantenna (acquired by ON Semi)",
+    role: "Systems Design Engineer",
+    period: "Jun 2017 - Mar 2020",
     description:
-      "Started my professional journey building web applications and learning best practices in software development.",
-    technologies: ["HTML", "CSS", "JavaScript", "Git"],
+      "Developed software interfaces for wireless systems and channel emulation. Implemented firmware features and built automation frameworks for testing and data collection.",
+    technologies: ["Python", "C", "WiFi", "DSP", "Automation"],
   },
 ];
 

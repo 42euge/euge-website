@@ -13,35 +13,33 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project One",
+    title: "TunRex",
     description:
-      "A full-stack web application built with modern technologies. Features include user authentication, real-time updates, and a responsive design.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    github: "https://github.com/42euge",
-    live: "#",
+      "Open source TUI/CLI toolkit for dataset exploration and research workflows. Modular architecture supporting interactive dashboard and pure CLI modes for rapid iteration.",
+    technologies: ["Python", "TUI", "CLI", "Open Source"],
+    github: "https://github.com/42euge/TunRex",
     featured: true,
   },
   {
-    title: "Project Two",
+    title: "Reward Development Tooling",
     description:
-      "An open-source tool that helps developers streamline their workflow. Built with performance and developer experience in mind.",
-    technologies: ["React", "Node.js", "GraphQL", "Docker"],
+      "Tools for rubric-based reward development, LLM-as-a-judge evaluation, and creative-task scoring. Deployed training pipelines across Kaggle TPUs, Colab, and GCP TPU VMs.",
+    technologies: ["JAX", "LoRA", "GRPO", "TPU"],
     github: "https://github.com/42euge",
     featured: true,
   },
   {
-    title: "Project Three",
+    title: "BlueTron",
     description:
-      "A mobile-first application designed to solve everyday problems. Clean UI and intuitive user experience.",
-    technologies: ["React Native", "Firebase", "Redux"],
+      "Voice agent integrating with launch coordination channels. Enables natural language queries about operational status and intelligent channel surfacing.",
+    technologies: ["Voice AI", "NLP", "Python"],
     github: "https://github.com/42euge",
-    live: "#",
   },
   {
-    title: "Project Four",
+    title: "Odessa",
     description:
-      "Backend service powering data processing pipelines. Handles high throughput with reliability.",
-    technologies: ["Python", "FastAPI", "Redis", "Kubernetes"],
+      "Classical ASR pipeline implementation including MFCC extraction, HMM-GMM acoustic models, EM training, and Viterbi decoding. Experimented with voice cloning for synthetic data generation.",
+    technologies: ["Python", "PyTorch", "ASR", "Audio"],
     github: "https://github.com/42euge",
   },
 ];
