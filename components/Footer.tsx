@@ -30,7 +30,7 @@ export function Footer() {
                 <FaGithub className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/eriveraramos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-violet-100 text-violet-600 rounded-xl border-2 border-violet-300 hover:bg-violet-200 transition-colors"

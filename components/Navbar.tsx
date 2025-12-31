@@ -64,7 +64,7 @@ export function Navbar() {
               <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/eriveraramos"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-950/70 hover:text-violet-600 transition-colors"
@@ -116,7 +116,7 @@ export function Navbar() {
                   <FaGithub className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/eriveraramos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-indigo-950/70 hover:text-violet-600 transition-colors"
