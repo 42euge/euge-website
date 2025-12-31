@@ -37,7 +37,7 @@ export function Navbar() {
             href="/"
             className="text-xl font-black text-indigo-950 hover:text-violet-600 transition-colors"
           >
-            ERR
+            WhoIsEugen.io
           </a>
 
           {/* Desktop Navigation */}
