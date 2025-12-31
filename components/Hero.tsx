@@ -58,9 +58,8 @@ export function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border-2 border-indigo-950 mb-8 cartoon-btn">
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 border-2 border-indigo-950 mb-8 cartoon-btn">
           <span className="text-2xl">👋</span>
-          <span className="font-bold text-indigo-950">Open to opportunities</span>
         </div>
 
         {/* Main heading */}
