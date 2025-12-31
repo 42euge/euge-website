@@ -5,10 +5,11 @@ import { FaGithub, FaArrowRight } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
 
 // Cartoon cloud SVG component
-function Cloud({ className }: { className?: string }) {
+function Cloud({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
       className={className}
+      style={style}
       viewBox="0 0 200 100"
       fill="white"
       xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +24,11 @@ function Cloud({ className }: { className?: string }) {
 }
 
 // Decorative star
-function Star({ className }: { className?: string }) {
+function Star({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
       className={className}
+      style={style}
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
