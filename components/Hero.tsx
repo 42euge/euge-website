@@ -76,8 +76,8 @@ export function Hero() {
 
         {/* Tagline */}
         <p className="text-lg text-indigo-800/80 max-w-2xl mx-auto mb-12">
-          Building elegant solutions and scalable systems. Passionate about
-          clean code, modern technologies, and creating impactful software.
+          Passionate about reinforcement learning research. Building RL pipelines for LLM fine-tuning,
+          reward modeling, and evaluation systems. Background in systems programming and scalable infrastructure.
         </p>
 
         {/* CTA Buttons - cartoon style */}
