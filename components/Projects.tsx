@@ -21,26 +21,12 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Reward Development Tooling",
-    description:
-      "Tools for rubric-based reward development, LLM-as-a-judge evaluation, and creative-task scoring. Deployed training pipelines across Kaggle TPUs, Colab, and GCP TPU VMs.",
-    technologies: ["JAX", "LoRA", "GRPO", "TPU"],
-    github: "https://github.com/42euge",
-    featured: true,
-  },
-  {
-    title: "BlueTron",
-    description:
-      "Voice agent integrating with launch coordination channels. Enables natural language queries about operational status and intelligent channel surfacing.",
-    technologies: ["Voice AI", "NLP", "Python"],
-    github: "https://github.com/42euge",
-  },
-  {
     title: "Odessa",
     description:
       "Classical ASR pipeline implementation including MFCC extraction, HMM-GMM acoustic models, EM training, and Viterbi decoding. Experimented with voice cloning for synthetic data generation.",
     technologies: ["Python", "PyTorch", "ASR", "Audio"],
     github: "https://github.com/42euge",
+    featured: true,
   },
 ];
 

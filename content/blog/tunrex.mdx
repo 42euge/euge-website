@@ -1,0 +1,103 @@
+---
+title: "TunRex: A TUI Toolkit for Dataset Exploration and Reward Analysis"
+date: "2024-12-31"
+description: "Introducing TunRex, an open source terminal-based toolkit for exploring ML datasets and analyzing rubric-based reward signals for reinforcement learning research."
+tags: ["reinforcement-learning", "open-source", "python", "TUI"]
+---
+
+# TunRex: A TUI Toolkit for Dataset Exploration and Reward Analysis
+
+When working on reinforcement learning research, particularly RLHF (Reinforcement Learning from Human Feedback) and rubric-based reward modeling, I found myself constantly switching between Jupyter notebooks, command-line tools, and various scripts to explore datasets and analyze reward signals. This friction led me to build **TunRex** - a terminal-based toolkit that brings these workflows together.
+
+## The Problem
+
+Modern RL training pipelines for LLMs involve complex data workflows:
+
+- Loading datasets from multiple sources (HuggingFace, Kaggle, TFDS)
+- Preparing data for GRPO (Group Relative Policy Optimization) training
+- Analyzing rubric coverage on model responses
+- Iteratively tweaking rubrics and observing how reward signals change
+
+Each of these tasks typically requires context-switching between different tools. When you're deep in the flow of rubric development, stopping to write a new script or spin up a notebook breaks concentration.
+
+## The Solution: TunRex
+
+TunRex provides two complementary interfaces:
+
+### 1. Dataset Explorer
+
+A terminal UI for browsing and comparing ML datasets. It supports:
+
+- **Multiple data sources**: HuggingFace Hub, Kaggle datasets, TensorFlow Datasets
+- **Grain integration**: Uses Google's Grain library for efficient data pipelines
+- **GRPO transforms**: Apply templates and prepare data for training in one step
+
+```python
+from tunrex.datasets import TunRex, TunRexConfig
+
+config = TunRexConfig(
+    source="huggingface",
+    dataset_name="gsm8k",
+    batch_size=8,
+)
+trex = TunRex(config)
+train_ds, val_ds, test_ds = trex.prepare_datasets()
+```
+
+### 2. Feedback Analysis
+
+This is where TunRex really shines for RL research. The Feedback Analysis mode provides:
+
+- **Rubric Analysis**: See how model responses score against rubric criteria using TF-IDF weighted term matching
+- **Interactive Rubric Editing**: Tweak rubrics and immediately see how the reward signal changes
+- **Term Heatmaps**: Visualize which rubric terms are covered, missing, or weak
+- **Annotation Support**: Tag samples with human feedback for building preference datasets
+
+The rubric analyzer computes per-term coverage and weights rare terms higher (inverse document frequency), giving you interpretable scores that correlate with semantic alignment.
+
+```python
+from tunrex.analysis import RubricAnalyzer
+
+analyzer = RubricAnalyzer()
+result = analyzer.compare_rubrics(
+    response="The model output...",
+    original_rubric="Must include X, Y, Z",
+    modified_rubric="Must include X, Y, Z, and be concise"
+)
+print(f"Delta: {result.delta} ({result.direction})")
+```
+
+## Why a TUI?
+
+Terminal interfaces might seem retro, but they have real advantages for research workflows:
+
+1. **Speed**: No browser overhead, instant startup
+2. **SSH-friendly**: Works over remote connections to GPU servers
+3. **Keyboard-driven**: Navigate datasets without touching a mouse
+4. **Scriptable**: Easy to integrate with shell workflows
+
+TunRex is built with [Textual](https://textual.textualize.io/), which provides a rich widget system while staying true to terminal aesthetics.
+
+## Getting Started
+
+```bash
+# Install
+uv pip install tunrex
+
+# Launch the main menu
+trex
+
+# Or jump directly to a specific app
+trex app dataset    # Dataset Explorer
+trex app feedback   # Feedback Analysis
+```
+
+## What's Next
+
+TunRex is still evolving. Some areas I'm exploring:
+
+- **Reward visualization**: Charts showing reward distributions across training runs
+- **LLM-as-judge integration**: Compare rubric scores with LLM evaluations
+- **Export workflows**: Generate training data from annotated samples
+
+The code is open source at [github.com/42euge/TunRex](https://github.com/42euge/TunRex). Contributions and feedback welcome!
